@@ -9,12 +9,18 @@ export const appTheme = StyleSheet.create({
         backgroundColor: 'white',
     },
     gifStyle: {
-        width: 350,
+        width: '95%',
         height: 350,
         alignSelf: 'center',
         marginBottom: 15
     },
-    gifGrid: {
-        marginBottom: 25
+    inputStyle: {
+        borderBottomWidth: 1,
+        marginBottom: 15
+    },
+    activityIndicatorStyle: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })

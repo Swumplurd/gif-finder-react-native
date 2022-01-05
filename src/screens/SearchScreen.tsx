@@ -1,6 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack'
 import React, { useContext, useState } from 'react'
-import { Button, Text, View } from 'react-native'
+import { Button, View } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
 import { GifContext } from '../contexts/GifContext'
 import { RootStackParams } from '../navigation/StackNav'
@@ -20,8 +20,7 @@ export const SearchScreen = ({navigation}: Props) => {
 
     return (
         <View style={appTheme.globalContainer}>
-            <Text>Search</Text>
-            <TextInput value={gif} onChangeText={setGif}/>
+            <TextInput style={appTheme.inputStyle} value={gif} onChangeText={setGif} placeholder='Search for a gif...'/>
 
             <Button title='Gif' onPress={handleSubmit}/>
         </View>
