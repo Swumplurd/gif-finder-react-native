@@ -1,7 +1,8 @@
 import { StackScreenProps } from '@react-navigation/stack'
 import React, { useContext } from 'react'
-import { ActivityIndicator, Button, Image, Text, View } from 'react-native'
+import { ActivityIndicator, Image, TouchableOpacity, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { GifContext } from '../contexts/GifContext'
 import { useGif } from '../hooks/useGif'
 import { RootStackParams } from '../navigation/StackNav'
@@ -17,14 +18,15 @@ export const GifScreen = ({navigation}: Props) => {
     
     return (
         <View style={appTheme.globalContainer}>
-        <Text>Gif</Text>
-            <Text>{nameGif}</Text>
-            <Button title='Search' onPress={() => navigation.navigate('SearchScreen')}/>
+            <TouchableOpacity style={{width: 30}} onPress={() => navigation.navigate('SearchScreen')}>
+              <Icon name="return-up-back-outline" size={30} color="#000" />
+            </TouchableOpacity>
+
             {
                 isLoading ? 
                     <ActivityIndicator size={'large'} color="#0000ff" /> 
                     :
-                    <ScrollView>
+                    <ScrollView style={appTheme.gifGrid}>
                         {
                             gifs.map(gif => {
                                 return <Image key={gif.id} style={appTheme.gifStyle} source={{uri: `${gif.images.original.url}`}}/>
@@ -32,7 +34,6 @@ export const GifScreen = ({navigation}: Props) => {
                         }
                     </ScrollView>
             }
-
         </View>
     )
 }

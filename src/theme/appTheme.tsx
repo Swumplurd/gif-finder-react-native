@@ -10,6 +10,11 @@ export const appTheme = StyleSheet.create({
     },
     gifStyle: {
         width: 350,
-        height: 350
+        height: 350,
+        alignSelf: 'center',
+        marginBottom: 15
+    },
+    gifGrid: {
+        marginBottom: 25
     }
 })
