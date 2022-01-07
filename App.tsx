@@ -8,7 +8,7 @@ import { StatusBar } from 'react-native';
 export const App = () => {
   return (
     <NavigationContainer>
-      <StatusBar backgroundColor={"white"} barStyle={'dark-content'}/>
+      <StatusBar backgroundColor={"transparent"} barStyle={'dark-content'} translucent/>
       <GifState>
         <StackNav/>
       </GifState>
