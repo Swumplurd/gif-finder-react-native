@@ -31,4 +31,13 @@ export const appTheme = StyleSheet.create({
         height,
         justifyContent: 'center'
     },
+    backArrow: {
+        position: 'absolute',
+        zIndex: 100,
+        top: 50,
+        left: 20
+    },
+    gifGrid: {
+        marginTop: 40
+    }
 })

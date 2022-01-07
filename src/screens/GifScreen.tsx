@@ -18,15 +18,15 @@ export const GifScreen = ({navigation}: Props) => {
 
     return (
         <View style={{flex: 1}}>
-            <TouchableOpacity style={appTheme.globalContainer} onPress={() => navigation.navigate('SearchScreen')}>
-              <Icon name="return-up-back-outline" size={30} color="#000" />
+            <TouchableOpacity style={appTheme.backArrow} onPress={() => navigation.navigate('SearchScreen')}>
+              <Icon name="return-up-back-outline" size={30} color="#fff" />
             </TouchableOpacity>
 
             {
                 isLoading ? 
                     <ActivityIndicator style={appTheme.activityIndicatorStyle} size={'large'} color="#0000ff" /> 
                     :
-                    <ScrollView>
+                    <ScrollView style={appTheme.gifGrid}>
                         {
                             gifs.map(gif => {
                                 return (
